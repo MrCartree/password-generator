@@ -17,40 +17,44 @@ function generatePassword() {
   
   let password = "";
 
-  while(password.length < passwordLength) {
+  while(password.length < parseInt(passwordLength)) {
 
     if (wantSymbols) {
       const symbols = "!@#$%^&*.,+-=";
-      const max = symbols.length;
-      const min = 0;
-      const symIndex = Math.trunc(max * Math.random() + min);
+      const symIndex = Math.trunc(symbols.length * Math.random());
       password += symbols[symIndex];
+      if (password.length === parseInt(passwordLength)) {
+        return password;
+      }
     }
   
     if (wantNumb) {
       const number = "0123456789";
-      const max = number.length;
-      const min = 0;
-      const numIndex = Math.trunc(max * Math.random() + min);
+      const numIndex = Math.trunc(number.length * Math.random());
       password += number[numIndex];
+      if (password.length === parseInt(passwordLength)) {
+        return password;
+      }
     }
   
     if (wantUpper) {
       const upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      const max = upCase.length;
-      const min = 0;
-      const upCaseInd = Math.trunc(max * Math.random() + min);
+      const upCaseInd = Math.trunc(upCase.length * Math.random());
       password += upCase[upCaseInd];
+      if (password.length === parseInt(passwordLength)) {
+        return password;
+      }
     }
   
     if (wantLower) {
       const lowCase = "abcdefghijklmnopqrstuvwxyz"
-      const max = lowCase.length;
-      const min = 0;
-      const lowCaseInd = Math.trunc(max * Math.random() + min);
+      const lowCaseInd = Math.trunc(lowCase.length * Math.random());
       password += lowCase[lowCaseInd];
+      if (password.length === parseInt(passwordLength)) {
+        return password;
+      }
     }
-
+  
   }
 
   return password;
