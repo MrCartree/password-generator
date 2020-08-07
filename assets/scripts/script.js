@@ -28,28 +28,28 @@ function generatePassword() {
 
       if (wantSymbols) {
         password += getRandomChar("!@#$%^&*.,+-=");
-        if (password.length === parseInt(passwordLength)) {
+        if (password.length === passwordLength) {
           return password;
         }
       }
 
       if (wantNumb) {
         password += getRandomChar("0123456789");
-        if (password.length === parseInt(passwordLength)) {
+        if (password.length === passwordLength) {
           return password;
         }
       }
 
       if (wantUpper) {
         password += getRandomChar("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-        if (password.length === parseInt(passwordLength)) {
+        if (password.length === passwordLength) {
           return password;
         }
       }
 
       if (wantLower) {
         password += getRandomChar("abcdefghijklmnopqrstuvwxyz");
-        if (password.length === parseInt(passwordLength)) {
+        if (password.length === passwordLength) {
           return password;
         }
       }
